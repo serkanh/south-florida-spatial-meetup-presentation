@@ -234,7 +234,7 @@ marker = new google.maps.Marker({
 
 
 					<section>
-						Adding a marker to the map.
+						Adding multiple markers to the map.
 						<pre><code data-trim>
 ... map = new google.maps.Map(document.getElementById('map'),mapOptions);
   var locations = [
@@ -257,6 +257,41 @@ marker = new google.maps.Marker({
 						</code></pre>
 					
 					</section>
+
+
+					<section>
+						Adding bounce animations to markers.
+						<pre><code>git checkout markeranimatedbounce</code></pre>
+						<pre><code data-trim>
+		...marker = new google.maps.Marker({
+        position:new google.maps.LatLng(locations[i][1],locations[i][2]),
+        map:map,
+        animation: google.maps.Animation.BOUNCE
+      });
+						</code></pre>
+
+
+					
+					</section>	
+
+
+					<section>
+						Adding drop animations to markers.
+						<pre><code>git checkout markeranimateddrop</code></pre>
+						<pre><code data-trim>
+		...marker = new google.maps.Marker({
+        position:new google.maps.LatLng(locations[i][1],locations[i][2]),
+        map:map,
+        animation: google.maps.Animation.DROP
+      });
+						</code></pre>
+
+
+					
+					</section>	
+
+
+
 
 				</section>
 
