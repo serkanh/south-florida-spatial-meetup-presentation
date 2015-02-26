@@ -293,6 +293,51 @@ marker = new google.maps.Marker({
 
 
 
+
+
+
+				</section>
+
+
+				<section>
+					<section>
+						Clone the repo from Github.com
+						<pre><code data-trim>
+							git clone https://github.com/serkanh/google-maps-demo.git
+						</code></pre>
+						<pre><code data-trim>						
+							cd google-maps-demo
+						</code></pre>
+						<pre><code data-trim>						
+							git checkout mapwithpolygon
+						</code></pre>
+					
+					</section>
+
+
+					<section>
+						Adding a polygon to the map.
+						<pre><code data-trim>
+var miami1=new google.maps.LatLng(25.7616798, -80.19179021000000);
+var miami2=new google.maps.LatLng(25.8616798, -80.20179022000000);
+var miami3=new google.maps.LatLng(25.7616798, -80.31179023000000);
+var locations = [miami1,miami2,miami3]
+
+  var tri=new google.maps.Polygon({
+    path:locations,
+    strokeColor:"#0000FF",
+    strokeOpacity:0.8,
+    strokeWeight:2,
+    fillColor:"#0000FF",
+    fillOpacity:0.4
+  });
+  
+  tri.setMap(map);
+}
+						</code></pre>
+					
+					</section>
+
 				</section>
 
 			
