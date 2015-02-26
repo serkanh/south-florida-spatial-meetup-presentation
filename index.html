@@ -340,6 +340,88 @@ var locations = [miami1,miami2,miami3]
 
 				</section>
 
+
+
+
+				<section>
+					<section>
+						Clone the repo from Github.com
+						<pre><code data-trim>
+							git clone https://github.com/serkanh/google-maps-demo.git
+						</code></pre>
+						<pre><code data-trim>						
+							cd google-maps-demo
+						</code></pre>
+						<pre><code data-trim>						
+							git checkout geocode
+						</code></pre>
+					
+					</section>
+
+
+					<section>
+						Assign latLng variable and set initial value for center of the map.
+						<pre><code data-trim>
+var map;
+function initialize() {
+  geocoder = new google.maps.Geocoder();
+  var latLng = new google.maps.LatLng(25.7616798,-80.19179020000001)
+  var mapOptions = {
+    zoom: 13,
+    center: latLng
+  };
+  map = new google.maps.Map(document.getElementById('map'),mapOptions);
+
+}
+						</code></pre>
+					
+					</section>
+
+
+
+					<section>
+						Create a function to run geocode based on given address. 
+						<pre><code data-trim>
+function codeAddress() {
+  var address = document.getElementById('address').value;
+  geocoder.geocode( { 'address': address}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+    } else {
+      alert('Geocode failed, reason was ' + status);
+    }
+  });
+}
+						</code></pre>
+					
+					</section>
+
+
+
+
+					<section>
+						Add form and div element to take input from the screen.
+						<pre><code data-trim>
+ <div id="panel">
+      <input id="address" type="textbox" value="Miami, FL">
+      <input type="button" value="Geocode" onclick="codeAddress()">
+    </div>
+						</code></pre>
+					
+					</section>
+
+				</section>
+
+
+	</section><!-- main section -->
+
+
+	
+
 			
 
 				
